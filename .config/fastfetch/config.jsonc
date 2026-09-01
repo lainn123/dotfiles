@@ -1,0 +1,139 @@
+/*
+HyDE provides xdg/share/fastfetch/presets/hyde/*.config.jsonc files for different layouts.
+You can also create your own config.jsonc file in the same directory to create a custom theme.
+
+To test HyDE's fastfetch theme, run:
+fastfetch --config hyde/*.jsonc
+
+*/
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "color": {
+            "1": "blue",
+            "2": "bright_blue"
+        },
+        "height": 18
+    },
+    "display": {
+        "separator": "  "
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "key": " ㅤ",
+            "keyColor": "white",
+            "format": "コンピューター"
+        },
+        {
+            "type": "custom",
+            "format": "┌──────────────────────────────────────────────┐"
+        },
+        {
+            "type": "chassis",
+            "key": "  󰇺 Chassis",
+            "keyColor": "blue",
+            "format": "{1} {2} {3}"
+        },
+        {
+            "type": "os",
+            "key": "  󰣇 OS",
+            "format": "{2}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "kernel",
+            "key": "   Kernel",
+            "format": "{2}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "packages",
+            "key": "  󰏗 Packages",
+            "keyColor": "blue"
+        },
+        {
+            "type": "display",
+            "key": "  󰍹 Display",
+            "format": "{1}x{2} @ {3}Hz [{7}]",
+            "keyColor": "blue"
+        },
+        {
+            "type": "terminal",
+            "key": "   Terminal",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wm",
+            "key": "  󱗃 WM",
+            "format": "{2}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "custom",
+            "format": "└──────────────────────────────────────────────┘"
+        },
+        "break",
+        {
+            "type": "title",
+            "key": "  ",
+            "keyColor": "white",
+            "format": "{6} {7} {8}"
+        },
+        {
+            "type": "custom",
+            "format": "┌──────────────────────────────────────────────┐"
+        },
+        {
+            "type": "cpu",
+            "format": "{1} @ {7}",
+            "key": "   CPU",
+            "keyColor": "blue"
+        },
+        {
+            "type": "gpu",
+            "format": "{1} {2}",
+            "key": "  󰊴 GPU",
+            "keyColor": "blue"
+        },
+        {
+            "type": "gpu",
+            "format": "{3}",
+            "key": "   GPU Driver",
+            "keyColor": "blue"
+        },
+        {
+            "type": "memory",
+            "key": "  󰍛 Memory ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "disk",
+            "key": "  󱦟 OS Age ",
+            "folders": "/",
+            "keyColor": "blue",
+            "format": "{days} days"
+        },
+        {
+            "type": "uptime",
+            "key": "  󱫐 Uptime ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "media",
+            "key": "  󰎈 Música ",
+            "keyColor": "blue",
+            "format": "{title}"
+        },
+        {
+            "type": "custom",
+            "format": "└──────────────────────────────────────────────┘"
+        },
+        {
+            "type": "colors",
+            "paddingLeft": 2,
+            "symbol": "circle"
+        },
+        "break"
+    ]
+}

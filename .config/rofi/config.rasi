@@ -1,0 +1,220 @@
+/*****----- Configuration -----*****/
+configuration {
+    modi:                       "drun,run,filebrowser,window";
+    show-icons:                 true;
+    display-drun:               "APPS";
+    display-run:                "RUN";
+    display-filebrowser:        "FILES";
+    display-window:             "WINDOW";
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
+}
+
+/*****----- Import Pywal -----*****/
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+/*****----- Global Properties -----*****/
+* {
+    font:                        "Sans 10";
+
+    /* Mapeamento das variáveis nativas do colors-rofi-dark.rasi */
+    background-alt:              var(background-color, #1e1e1e);
+    selected:                    var(selected-normal-background, #89b4fa);
+    active:                      var(active-background, #a6e3a1);
+    urgent:                      var(urgent-background, #f38ba8);
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       1000px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    border-radius:               15px;
+    border:                      0px;
+    cursor:                      "default";
+    background-color:            var(background, #000000);
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    background-color:            transparent;
+    orientation:                 horizontal;
+    children:                    [ "imagebox", "listbox" ];
+}
+
+imagebox {
+    padding:                     20px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "dummy", "mode-switcher" ];
+}
+
+listbox {
+    spacing:                     20px;
+    padding:                     20px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "message", "listview" ];
+}
+
+dummy {
+    background-color:            transparent;
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     15px;
+    border-radius:               10px;
+    background-color:            var(background-alt);
+    text-color:                  var(foreground, #ffffff);
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "";
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+entry {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+}
+
+/*****----- Mode Switcher -----*****/
+mode-switcher{
+    enabled:                     true;
+    spacing:                     20px;
+    background-color:            transparent;
+    text-color:                  var(foreground, #ffffff);
+}
+
+button {
+    padding:                     15px;
+    border-radius:               10px;
+    background-color:            var(background-alt);
+    text-color:                  inherit;
+    cursor:                      pointer;
+}
+
+button selected {
+    background-color:            var(selected);
+    text-color:                  var(selected-normal-foreground, #000000);
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    spacing:                     10px;
+    background-color:            transparent;
+    text-color:                  var(foreground, #ffffff);
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     15px;
+    padding:                     8px;
+    border-radius:               10px;
+    background-color:            transparent;
+    text-color:                  var(foreground, #ffffff);
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  var(foreground, #ffffff);
+}
+
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  var(foreground, #ffffff);
+}
+
+element normal.urgent {
+    background-color:            var(urgent);
+    text-color:                  var(foreground, #ffffff);
+}
+
+element normal.active {
+    background-color:            var(active);
+    text-color:                  var(foreground, #ffffff);
+}
+
+element selected.normal {
+    background-color:            var(selected);
+    text-color:                  var(selected-normal-foreground, #000000);
+}
+
+element selected.urgent {
+    background-color:            var(urgent);
+    text-color:                  var(foreground, #ffffff);
+}
+
+element selected.active {
+    background-color:            var(urgent);
+    text-color:                  var(foreground, #ffffff);
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        32px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Message -----*****/
+message {
+    background-color:            transparent;
+}
+
+textbox {
+    padding:                     15px;
+    border-radius:               10px;
+    background-color:            var(background-alt);
+    text-color:                  var(foreground, #ffffff);
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+error-message {
+    padding:                     15px;
+    border-radius:               20px;
+    background-color:            var(background, #000000);
+    text-color:                  var(foreground, #ffffff);
+}
