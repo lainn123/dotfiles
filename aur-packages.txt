@@ -1,0 +1,6 @@
+dwm-git
+hyprlang2lua
+paru
+pfetch
+rmlint-git
+vesktop-bin
